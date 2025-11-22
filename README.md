@@ -70,6 +70,16 @@ spec:
     port: 80
 
 ```
+## ▶ How to Apply Service
+```sh
+kubectl apply -f service.yaml
+```
+## ▶ To Check Pod Service
+```sh
+kubectl get service
+kubectl get svc
+```
+
 ## What Is NameSpace 
  A NameSpace In kubernetes is way to divide a cluster into small virtual groups so the resources can be orginised and managed saperately
  #### Initial Namespaces
