@@ -74,7 +74,7 @@ spec:
 ```sh
 kubectl apply -f service.yaml
 ```
-## ▶ To Check Pod Service
+## ▶ To Check Service
 ```sh
 kubectl get service
 kubectl get svc
