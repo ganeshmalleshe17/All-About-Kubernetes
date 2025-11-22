@@ -16,10 +16,10 @@ aws eks update-kubeconfig --region <Region-Name> --name <Cluster-Name>
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod
+  name: ganesh-pod
 spec:
   containers:
-  - name: my-container
+  - name: my-cont1
     image: nginx
     ports:
     - containerPort: 80
