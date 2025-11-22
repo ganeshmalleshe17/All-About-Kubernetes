@@ -63,7 +63,7 @@ kind: Service
 metadata:
   name: my-service
 spec:
-  type: NodePort #LoadBalancer to change service type make changes only in (type:)
+  type: NodePort # to change service type make changes only in (type:LoadBalancer)
   ports:
   - name : http
     protocol: TCP
