@@ -58,6 +58,16 @@ kubectl log my-pod
          - Headless service is used when application need direct pod to pod communication 
 ## Service YAML example
 ```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: NodePort #LoadBalancer to change service type make changes only in (type:)
+  ports:
+  - name : http
+    protocol: TCP
+    port: 80
 
 ```
 ## What Is NameSpace 
