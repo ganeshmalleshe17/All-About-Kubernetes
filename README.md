@@ -87,5 +87,12 @@ kubectl get svc
      2) kube-node-lease
      3) kube-public
      4) kubesystem
-       
-    
+## Namspace YAML Example
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ganesh-namespace
+  labels:
+    name: devops
+```
