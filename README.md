@@ -111,7 +111,10 @@ kubectl get namespace
 kubectl get ns
 ```
 ## What is Deployement
-   a deployement is a kubernetes object that manages pods it maintain the desired number od pod replicas and allow easy updates,rollback,and scaling
+   - a deployement is a kubernetes object that manages pods it maintain the desired number od pod replicas and allow easy updates,rollback,and scaling
+   - uses replicaset internally
+   - support rolling updates
+   - Easy Rollback
 ### Deployment strategies 
 1) Rolling Update
    - updates the pod one by one with zero downtime
