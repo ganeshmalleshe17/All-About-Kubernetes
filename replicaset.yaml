@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-ganesh
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ganeshsm
+  template:
+    metadata:
+      name: ganesh-pod
+      labels:
+        app: ganeshsm
+    spec:
+      containers:
+      - name: my-cont
+        image: httpd
+        ports:
+        - containerPort: 80
