@@ -199,12 +199,13 @@ spec:
         - containerPort: 80
 ```
 ##  ▶ How to Apply ReplicaSet
-      ```sh
+```sh
       kubectl apply -f rs.yaml
-      ```
+```
 ##  ▶ How To Check ReplicaSet
-      ```sh
+```sh
       kubectl get replicaset
       kubectl get rs
+```
       
       
