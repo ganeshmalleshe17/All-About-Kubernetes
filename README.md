@@ -1,6 +1,11 @@
 # What Is Kubernetes
 kubernets is a opensource container orchisrtration platform designed to automate 
 deployment,scaling and managment of containerised applications
+## kubernetes clusters
+1) Kubeadm  
+2) Minikube(local/ec2)
+3) KIND cluster
+4) EKS/AKS/GKE
 #### Command for connect your local system (kubectl) to an EKS (Elastic Kubernetes Service) cluster in AWS.
 ```sh
 aws eks update-kubeconfig --region <Region-Name> --name <Cluster-Name>
@@ -162,5 +167,5 @@ kubectl scale deployment/<deployment name> -- replicas=5
 ```sh
 kubectl set image deployment <deployment name> <container name>=image
 ```
-
+## What is Replietcas
   
