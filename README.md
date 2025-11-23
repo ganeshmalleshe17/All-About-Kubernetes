@@ -74,7 +74,7 @@ spec:
 ```sh
 kubectl apply -f service.yaml
 ```
-## ▶ To Check Service
+## ▶ How To Check Service
 ```sh
 kubectl get service
 kubectl get svc
@@ -96,3 +96,71 @@ metadata:
   labels:
     name: devops
 ```
+## ▶ How to Apply Namespace
+```sh
+kubectl apply -f ns.yaml
+```
+## ▶ How To Check namespace
+```sh
+kubectl get namespace
+kubectl get ns
+```
+## What is Deployement
+   a deployement is a kubernetes object that manages pods it maintain the desired number od pod replicas and allow easy updates,rollback,and scaling
+### Deployment strategies 
+1) Rolling Update
+   - updates the pod one by one with zero downtime
+2) Receate
+   - all pods are deleted first then new pods are create
+3) Blue-green
+   - Run to envirements at the same time Blue=current version Green= new version switches traffic when green is ready
+4) canary Deployement
+    - a small partiation of users get new version for testing if it is good incress traffic to new version pods
+5) progressive delivery
+    - combines canary or blue green with manintaning an auto roll back 
+6) A/B testing
+   - diffrent user groups see diffrent versions to test feature or user behavior
+7) Shadow
+    - The new versions recives a copy of real traffic but doesnt imapct users
+## Deployment YAML Example
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: ganesh
+  template:
+    metadata:
+      name: my-pod12
+      labels:
+        app: ganesh
+    spec:
+      containers:
+      - name : my-cont1
+        image: httpd
+        ports:
+        - containerPort: 8080
+ ```
+## ▶ How to Apply Deployement
+```sh
+kubectl apply -f deplyment.yaml
+```
+## ▶ How To Check Deployement
+```sh
+kubectl get deployment
+kubectl get deploy
+```
+## coomand to scale up and scale down pods
+```sh
+kubectl scale deployment/<deployment name> -- replicas=5
+```
+## command to change the image in deployment file
+```sh
+kubectl set image deployment <deployment name> <container name>=image
+```
+
+  
