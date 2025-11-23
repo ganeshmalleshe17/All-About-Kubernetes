@@ -167,5 +167,41 @@ kubectl scale deployment/<deployment name> -- replicas=5
 ```sh
 kubectl set image deployment <deployment name> <container name>=image
 ```
-## What is Replietcas
-  
+## What is Replietcaset
+ - replicaset keeps the desired number of pods running but does not manage updates
+ - it maintain pod count
+ - No update or roll back feature
+ - used internaly by deployments
+## ReplicaSet YAML Example 
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-ganesh
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ganeshsm
+  template:
+    metadata:
+      name: ganesh-pod
+      labels:
+        app: ganeshsm
+    spec:
+      containers:
+      - name: my-cont
+        image: httpd
+        ports:
+        - containerPort: 80
+```
+##  ▶ How to Apply ReplicaSet
+      ```sh
+      kubectl apply -f rs.yaml
+      ```
+##  ▶ How To Check ReplicaSet
+      ```sh
+      kubectl get replicaset
+      kubectl get rs
+      
+      
