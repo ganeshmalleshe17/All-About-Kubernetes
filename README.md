@@ -207,5 +207,9 @@ spec:
       kubectl get replicaset
       kubectl get rs
 ```
-      
-      
+## What Is DaemonSet
+-A DaemonSet in Kubernetes makes sure that one pod runs on each node automatically.
+- It is mainly used for tasks like monitoring, logging, or networking agents that must run on every node in the cluster.
+- Use it when you need a pod running on all nodes or specific nodes.
+- ### Daemonset.YAML Example
+- 
