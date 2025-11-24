@@ -211,5 +211,36 @@ spec:
 -A DaemonSet in Kubernetes makes sure that one pod runs on each node automatically.
 - It is mainly used for tasks like monitoring, logging, or networking agents that must run on every node in the cluster.
 - Use it when you need a pod running on all nodes or specific nodes.
-- ### Daemonset.YAML Example
-- 
+## Daemonset.YAML Example
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-daemon
+spec:
+   selector:
+     matchLabels: 
+       app: nginx
+   template:
+      metadata:
+        name: my-daemon-pod
+        labels:
+          app: nginx
+      spec:
+        containers:
+        - name: my-dmn-cont
+          image: nginx
+          ports:
+          - containerPort: 80
+```
+###  ▶ How to apply Daemonset
+```sh
+ kubectl apply -f daemonset.yaml
+```
+###  ▶ How To Check Daemonset
+```sh
+kubectl get daemonset
+kubectl describe daemonset my-daemon
+kubectl get pods -o wide
+```
+
